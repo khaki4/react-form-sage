@@ -4,17 +4,12 @@ import * as actionCreators from '../actions/actionCreators';
 
 import Main from './Main';
 
-function mapStateToProps(state) {
-  return {
+const App = connect(
+  (state) => ({
     weather: state.weather,
     form: state.form,
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(actionCreators, dispatch);
-}
-
-const App = connect(mapStateToProps, mapDispatchToProps)(Main);
+  }),
+  { ...actionCreators },
+  )(Main);
 
 export default App;

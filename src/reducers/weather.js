@@ -1,4 +1,4 @@
-const weather = (state = [], action) => {
+export default (state = [], action) => {
   switch (action.type) {
     case 'FETCH_WEATHER_DONE':
       return action.result;
@@ -6,5 +6,3 @@ const weather = (state = [], action) => {
       return state;
   }
 }
-
-export default weather;
